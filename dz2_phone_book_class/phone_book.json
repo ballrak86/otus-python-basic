@@ -1,0 +1,26 @@
+[
+  {
+    "id_directory": 1,
+    "name": "Алексей",
+    "phone": 89181440347,
+    "comment": "OTUS"
+  },
+  {
+    "id_directory": 2,
+    "name": "Anfisa",
+    "phone": 89041759121,
+    "comment": "прекрасная леди"
+  },
+  {
+    "id_directory": 3,
+    "name": "STONE",
+    "phone": 89292245227,
+    "comment": "dirty python"
+  },
+  {
+    "id_directory": 4,
+    "name": "Tanya",
+    "phone": 89941759147,
+    "comment": "dirty girl"
+  }
+]
