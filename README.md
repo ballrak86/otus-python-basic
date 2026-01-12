@@ -5,3 +5,6 @@
 2. [dz2_phone_book_class](https://github.com/ballrak86/otus-python-basic/tree/dev/dz2_phone_book_class)
 
    Второе домашнее задание. Справочник с использованием классов.
+3. [dz3_phone_book_pytest](https://github.com/ballrak86/otus-python-basic/tree/dev/dz3_phone_book_pytest)
+
+   Третье домашнее задание. Справочник с использованием тестов с модулем pytest.
