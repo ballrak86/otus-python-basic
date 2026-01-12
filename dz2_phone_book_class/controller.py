@@ -251,4 +251,4 @@ def checking_for_empty_data(value, message):
     if value:
         return value
     else:
-        raise model.CheckIsDigit(message)
+        raise model.EmptyData(message)
