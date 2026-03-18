@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block header %}
+<h1 class="display-4 fw-normal">{{ title }}</h1>
+<p class="fs-5 text-muted">{{ text }}</p>
+<a href="/api/new">Создать новую задачу</a>
+{% endblock %}
+
+{% block content %}
+<script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.min.js" integrity="sha384-/TgkGk7p307TH7EXJDuUlgG3Ce1UVolAOFopFekQkkXihi5u/6OCvVKyz1W+idaz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/htmx-ext-sse@2.2.4" integrity="sha384-A986SAtodyH8eg8x8irJnYUk7i9inVQqYigD6qZ9evobksGNIXfeFvDwLSHcp31N" crossorigin="anonymous"></script>
+<div hx-ext="sse" sse-connect="/api/sse" sse-swap="message">
+    Contents of this box will be updated in real time
+    with every SSE message received from the chatroom.
+</div>
+
+
+
+<!--{% for job in to_do_list %}-->
+<!--<div class="col">-->
+<!--    <div class="card mb-4 rounded-3 shadow-sm">-->
+<!--        <div class="card-header py-3">-->
+<!--            <h4 class="my-0 fw-normal"><a href="/api/item/{{ job.job_id }}">{{ job.title }}</a></h4>-->
+<!--        </div>-->
+<!--        <div class="card-body">-->
+<!--            <h1 class="card-title pricing-card-title">{{ job.due_date }}<small class="text-muted fw-light"></small></h1>-->
+<!--            <ul class="list-unstyled mt-3 mb-4">-->
+<!--                <li>{{ job.description }}</li>-->
+<!--            </ul>-->
+<!--            <div class="form-check form-switch">-->
+<!--                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" {% if job.completed %}-->
+<!--                       checked {% endif %}>-->
+<!--                <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--{% endfor %}-->
+{% endblock %}
+

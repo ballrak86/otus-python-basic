@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block header %}
+<h1 class="display-4 fw-normal">{{ title }}</h1>
+<p class="fs-5 text-muted">{{ text }}</p>
+{% endblock %}
+
+{% block content %}
+{% if user_name == "" %}
+  <h2 class="display-4 fw-normal">Пожалуйста, авторизуйтесь!!!</h2>
+{% else %}
+<form action="job_create" method="post">
+    <div class="mb-3">
+        <label for="Input1" class="form-label">Название задачи</label>
+        <input name="title" type="text" class="form-control" id="Input1" placeholder="Введите">
+    </div>
+    <div class="mb-3">
+        <label for="Input2" class="form-label">Описание задачи</label>
+        <input name="description" type="text" class="form-control" id="Input2" placeholder="Введите">
+    </div>
+    <div class="mb-3">
+        <label for="Input3" class="form-label">Дата</label>
+        <input name="due_date" type="date" class="form-control" id="Input3" placeholder="Введите">
+    </div>
+    <div class="form-check form-switch">
+        <input name="completed" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+    </div>
+    <input type="submit" value="Send"/>
+</form>
+{% endif %}
+{% endblock %}
+
