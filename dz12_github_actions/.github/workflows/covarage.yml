@@ -1,0 +1,66 @@
+on: ["push", "pull_request"]
+
+name: Test Coveralls
+
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python 3.13
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.13"
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install poetry
+        poetry install
+    # Step: Upload to Coveralls using Cobertura XML
+    - name: Upload coverage to Coveralls
+      uses: coverallsapp/github-action@v2
+      with:
+        format: cobertura
+        file: coverage.xml
+
+    - name: Run tests with coverage
+      run: |
+        coverage run -m pytest
+        coverage xml  # generates coverage.xml
+
+
+
+    - uses: actions/checkout@v6
+
+    - name: Install Node.js
+      uses: actions/setup-node@v6
+      with:
+        node-version: lts/*
+
+    - name: npm install, make test-coverage
+      run: |
+        npm install
+        make test-coverage
+
+    # Step: Upload to Coveralls using Cobertura XML
+    - name: Upload coverage to Coveralls
+      uses: coverallsapp/github-action@v2
+      with:
+        format: cobertura
+        file: coverage.xml
+
+
+
+- name: Run tests with coverage
+  run: |
+    coverage run -m pytest
+    coverage xml  # generates coverage.xml
+
+# Step: Upload to Coveralls using Cobertura XML
+- name: Upload coverage to Coveralls
+  uses: coverallsapp/github-action@v2
+  with:
+    format: cobertura
+    file: coverage.xml
