@@ -17,6 +17,12 @@
 6. [dz6_aio](https://github.com/ballrak86/otus-python-basic/tree/main/dz6_aio)
 
    Шестое домашнее задание. Асинхронная работа с сетью и БД.
+7. [dz7_docker_compose](https://github.com/ballrak86/otus-python-basic/tree/main/dz7_docker_compose)
+
+   Седьмое домашнее задание. Docker Compose взаимодействие между контейнерами.
+8. [dz8_django_orm](https://github.com/ballrak86/otus-python-basic/tree/main/dz8_django_orm)
+
+   Восьмое домашнее задание. Django ORM работа с БД через shell.
 14. [dz14_course_project](https://github.com/ballrak86/otus-python-basic/tree/main/course_project)
 
    Курсовой проект. Веб-приложение ToDoList.
